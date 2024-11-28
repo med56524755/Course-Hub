@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Hub</title>
+    <link rel="icon" href="https://i.ibb.co/ykqVNpJ/20241121-204743.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://i.ibb.co/ykqVNpJ/20241121-204743.png" alt="Course Hub Logo">
+                <a href="#" class="course-link"><span class="course">Course</span> <span class="hub">Hub</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span>&#9776;</span>
+            </div>
+        </nav>
+    </header>
+
+<div class="main-content">
+    <div class="container">
+        <h1>Word Bank Quiz</h1>
+        <div id="quiz">
+            <div class="question" id="question"></div>
+            <div class="options">
+                <div class="option" id="a" onclick="checkAnswer('a')">Option A</div>
+                <div class="option" id="b" onclick="checkAnswer('b')">Option B</div>
+                <div class="option" id="c" onclick="checkAnswer('c')">Option C</div>
+                <div class="option" id="d" onclick="checkAnswer('d')">Option D</div>
+            </div>
+            <button class="button" id="nextBtn" onclick="nextQuestion()">Next Question</button>
+            <div class="score" id="score">Score: <span>0</span></div>
+            <div class="message" id="message"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    const questions = [
+    {
+        question: "What does 'Networking' mean?",
+        options: ["Building relationships and connections", "A social media platform", "A process of making personal investments", "A way to travel"],
+        correctAnswer: "a"
+    },
+    {
+        question: "What describes an 'Introvert'?",
+        options: ["Someone who loves socializing", "A person who prefers loud environments", "Someone who is always outgoing", "A person who enjoys being alone"],
+        correctAnswer: "d"
+    },
+    {
+        question: "What is the meaning of 'Initiative'?",
+        options: ["Staying passive until asked", "Reacting to situations", "Starting an action or process on your own", "Working with others on a shared project"],
+        correctAnswer: "c"
+    },
+    {
+        question: "What does 'Mutual benefit' refer to?",
+        options: ["The act of giving without receiving", "Helping others without expecting anything", "A situation where both parties gain from an interaction", "A single-sided relationship"],
+        correctAnswer: "c"
+    },
+    {
+        question: "What is 'Reciprocity' in social terms?",
+        options: ["Exchanging favors or actions with someone", "Staying isolated and working independently", "Ignoring others in the conversation", "One-sided communication"],
+        correctAnswer: "a"
+    },
+    {
+        question: "What does 'Conversation balance' mean?",
+        options: ["Avoiding eye contact while speaking", "Equally contributing to a conversation", "Listening without speaking", "Monopolizing the conversation"],
+        correctAnswer: "b"
+    },
+    {
+        question: "What is the meaning of 'Positive' in conversations?",
+        options: ["Being quiet and passive", "Engaging with an optimistic attitude", "Avoiding any disagreements", "Always agreeing with others"],
+        correctAnswer: "b"
+    },
+    {
+        question: "What does 'Curiosity' imply in social interactions?",
+        options: ["Ignoring what others have to say", "Asking questions and showing interest", "A lack of interest in conversations", "Talking only about yourself"],
+        correctAnswer: "b"
+    },
+    {
+        question: "What is 'Connection' in a professional context?",
+        options: ["Building relationships that are beneficial to both sides", "Being isolated from others", "Avoiding networking opportunities", "A direct link between two computers"],
+        correctAnswer: "a"
+    },
+    {
+        question: "What is 'Goal-setting'?",
+        options: ["Sitting back and waiting for things to happen", "Avoiding planning", "Establishing clear objectives to achieve", "Following what others decide"],
+        correctAnswer: "c"
+    },
+    {
+        question: "What does 'Collaboration' mean?",
+        options: ["Working alone in isolation", "Competing against others", "Working together towards a common goal", "Delegating all tasks to others"],
+        correctAnswer: "c"
+    },
+    {
+        question: "What is 'Engagement' in a conversation?",
+        options: ["Talking just to fill silence", "Avoiding eye contact", "Listening passively without responding", "Being actively involved and interested"],
+        correctAnswer: "d"
+    },
+    {
+        question: "What does 'Conversation flow' mean?",
+        options: ["Waiting for the conversation to end", "Interrupting the speaker frequently", "A smooth exchange of ideas between people", "A monologue from one person"],
+        correctAnswer: "c"
+    },
+    {
+        question: "What is 'Self-awareness' in communication?",
+        options: ["Talking without thinking", "Ignoring how you come across to others", "Not noticing how others react to your words", "Understanding your own feelings and actions in a conversation"],
+        correctAnswer: "d"
+    },
+    {
+        question: "What does 'Proactive' mean?",
+        options: ["Avoiding responsibility", "Waiting for others to give you instructions", "Taking action before being asked", "Reacting to situations after they happen"],
+        correctAnswer: "c"
+    }
+];
+
+
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let answeringDisabled = false;
+
+    function loadQuestion() {
+        const question = questions[currentQuestionIndex];
+        document.getElementById('question').textContent = question.question;
+        const options = document.querySelectorAll('.option');
+        options.forEach((option, index) => {
+            option.textContent = question.options[index];
+            option.style.backgroundColor = '#f8f9fa';  // Reset background color
+            option.style.pointerEvents = 'auto';  // Enable option click again
+        });
+        document.getElementById('nextBtn').disabled = true;  // Disable next button initially
+    }
+
+    function checkAnswer(answer) {
+        if (answeringDisabled) return;  // Prevent multiple selections
+        answeringDisabled = true;
+
+        const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+        const options = document.querySelectorAll('.option');
+
+        options.forEach((option) => {
+            option.style.pointerEvents = 'none';  // Disable further clicks
+            if (option.id === answer) {
+                if (answer === correctAnswer) {
+                    option.style.backgroundColor = '#6ec0e5';  // Correct answer color
+                    score++;
+                } else {
+                    option.style.backgroundColor = '#fd6f61';  // Incorrect answer color
+                }
+            } else if (option.id === correctAnswer) {
+                option.style.backgroundColor = '#6ec0e5';  // Correct answer color
+            }
+        });
+
+        document.getElementById('score').innerHTML = `Score: <span>${score}</span>`;
+        document.getElementById('nextBtn').disabled = false;  // Enable the next button
+    }
+
+    function nextQuestion() {
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            loadQuestion();
+            answeringDisabled = false;
+        } else {
+            showFinalMessage();
+        }
+    }
+
+    function showFinalMessage() {
+        let message = '';
+        let messageColor;
+        const totalQuestions = questions.length;
+        const quarterQuestions = totalQuestions / 4;
+        const halfQuestions = totalQuestions / 2;
+
+        if (score < quarterQuestions) {
+            message = "🥺Oops, looks like you need to brush up on your word bank skills! Try again!🥺";
+            messageColor = "#fd6f61";  // Red for low score
+        } else if (score <= halfQuestions) {
+            message = "😉Great job! You're getting better, but there's room for improvement!😉";
+            messageColor = "green";  // Green for medium score
+        } else {
+            message = "👑Amazing! You've aced it, perfect score! You're a word bank champion!👑";
+            messageColor = "#4fa3b9";  // Darker blue for high score
+        }
+
+        const messageElement = document.getElementById('message');
+        messageElement.textContent = message;
+        messageElement.style.color = messageColor;
+        messageElement.style.opacity = 1;  // Make the message visible
+        messageElement.style.fontWeight = "bold";  // Ensure message stands out
+    }
+
+    // Initialize the first question
+    loadQuestion();
+</script>
+
+</body>
+</html>

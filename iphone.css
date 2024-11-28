@@ -1,0 +1,120 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #fcfbfb;
+  color: rgb(0, 0, 0);
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px; /* Adjust based on your logo size */
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-top: 30px;
+  color: #333;
+}
+
+section {
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ol {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+ol li {
+  margin-bottom: 15px;
+}
+
+ol li strong {
+  color: #fd6f61;
+}
+
+.course-link {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.course {
+  color: #6ec0e5;
+}
+
+.hub {
+  color: #fd6f61;
+}
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+.nav-links {
+display: none;
+width: 100%;
+flex-direction: column;
+position: absolute;
+top: 60px;
+left: 0;
+padding: 10px 0;
+background-color: #ffffff;
+}
+
+.nav-links li {
+margin: 10px 0;
+text-align: center;
+}
+
+.nav-links.active {
+display: flex;
+}
+
+.menu-toggle {
+display: block;
+}
+}
+.responsive-image {
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 20px auto; /* Adjust the margin to your liking */
+}

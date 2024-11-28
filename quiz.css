@@ -1,0 +1,193 @@
+        /* Navbar styles */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 10px 0;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px; /* Adjust based on your logo size */
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+.nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    background-color: #ffffff;
+}
+
+.nav-links li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.menu-toggle {
+    display: block;
+}
+}
+header {
+  margin-bottom: 20px;
+}
+.course-link {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.course {
+  color: #6ec0e5;
+}
+
+.hub {
+  color: #fd6f61;
+}
+
+        /* General page styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f0f4f8;
+        }
+
+        /* Centering the content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #fd6f61;
+        }
+
+        .question {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .options {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .option {
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #6ec0e5;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #fd6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #e15b4c;
+        }
+
+        .score {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+            background-color: #f0f8ff;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .score > span {
+            font-size: 32px;
+            color: #fd6f61;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .options {
+                grid-template-columns: 1fr;
+            }
+        }
