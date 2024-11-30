@@ -30,6 +30,10 @@
   display: flex;
   gap: 20px;
 }
+.nav-links li :hover {
+  color: #fd6f61;
+  font-weight: bold;
+}
 
 .nav-links li a {
   text-decoration: none;
@@ -165,7 +169,7 @@ header {
             padding: 10px;
             border-radius: 5px;
             display: inline-block;
-            width: 100%;
+            width: 80%;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease;

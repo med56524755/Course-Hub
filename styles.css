@@ -42,6 +42,10 @@ header {
   color: rgb(0, 0, 0);
   font-weight: bold;
 }
+.nav-links li :hover {
+  color: #fd6f61;
+  font-weight: bold;
+}
 
 .menu-toggle {
   display: none;
@@ -239,9 +243,8 @@ header {
 }
 
 .new-intro-image img {
-  width: 100%;
+  width: 80%;
   height: auto;
-  max-width: 800px;
 }
 
 /* Mobile Styles for New Intro Section */
@@ -386,10 +389,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.new-intro-container:hover {
-  background-color: #e6f7ff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+
 
 .new-intro-title {
   font-size: 2.5em;
@@ -495,5 +495,14 @@ body {
     text-align: center;
   }
 }
+/* Remove text decoration from links inside .card-title */
+.card-title a {
+  text-decoration: none;
+  color: #333;
+}
 
-
+/* Optional: Style the link to look consistent with other titles */
+.card-title a:hover {
+  text-decoration: underline; /* Optionally, you can add a hover effect */
+  color: #fd6f61;
+}

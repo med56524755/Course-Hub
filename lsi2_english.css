@@ -34,7 +34,10 @@ list-style: none;
 display: flex;
 gap: 20px;
 }
-
+.nav-links li :hover {
+    color: #fd6f61;
+    font-weight: bold;
+  }
 .nav-links li a {
 text-decoration: none;
 color: rgb(0, 0, 0);

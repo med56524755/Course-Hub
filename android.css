@@ -1,0 +1,253 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(90deg, #6ec0e5, #fd6f61);
+  color: #333;
+}
+
+header {
+  background-color: #fcfbfb;
+  color: rgb(0, 0, 0);
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px; /* Adjust based on your logo size */
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li :hover {
+  color: #fd6f61;
+  font-weight: bold;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.course-link {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.course {
+    color: #6ec0e5;
+}
+
+.hub {
+    color: #fd6f61;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.row .left,
+.row .right {
+    width: 48%;
+    text-align: center;
+}
+
+.responsive-img {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+}
+
+/* Big Banner Section */
+.big-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #6ec0e5, #fd6f61);
+    color: white;
+    padding: 150px 50px;
+    margin-bottom: 20px;
+}
+
+.banner-content {
+    max-width: 60%;
+}
+
+.banner-content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-btn {
+    background-color: #ffffff;
+    color: #6ec0e5;
+    border: 2px solid #ffffff;
+}
+
+.primary-btn:hover {
+    background-color: #6ec0e5;
+    color: #ffffff;
+}
+
+.secondary-btn {
+    background-color: #ffffff;
+    color: #fd6f61;
+    border: 2px solid #ffffff;
+}
+
+.secondary-btn:hover {
+    background-color: #fd6f61;
+    color: #ffffff;
+}
+
+.banner-image {
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .big-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .banner-image {
+        max-width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .row .left,
+    .row .right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner-content h1 {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .responsive-img {
+        max-width: 200px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center; /* Center align the text */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Add spacing between links */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show the links when toggled */
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
