@@ -117,7 +117,7 @@ display: block;
 }
 }
 .responsive-image {
-  max-width: 60%;
+  max-width: 100%;
   height: auto;
   display: block;
   margin: 20px auto; /* Adjust the margin to your liking */
