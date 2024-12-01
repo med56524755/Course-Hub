@@ -1,0 +1,179 @@
+/* Basic reset and layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #6ec0e5, #fd6f61);
+}
+
+/* Section Styling */
+.image-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    background: linear-gradient(90deg, #6ec0e5, #fd6f61);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Styles */
+.image-left img, .image-center img, .image-right img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.image-left img {
+    max-width: 400px;
+}
+
+/* Center Image and Text Styling */
+.image-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centers the items horizontally */
+    justify-content: center;  /* Centers the items vertically */
+    text-align: center;  /* Centers the text inside */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;  /* Limit the container width for better appearance */
+    margin: 20px auto;  /* Centers the entire container in the parent */
+}
+
+.image-center img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;  /* Adds space between the image and text */
+}
+
+
+
+.image-center p {
+    font-size: 16px;
+    color: #000000;
+    max-width: 90%;  /* Prevents the paragraph from stretching too wide */
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .image-center {
+        max-width: 100%;  /* Ensures the container spans full width on smaller screens */
+        padding: 15px;
+    }
+
+    .image-center h1 {
+        font-size: 20px;  /* Adjust heading size on smaller screens */
+    }
+
+    .image-center p {
+        font-size: 14px;  /* Adjust paragraph size on smaller screens */
+    }
+}
+
+
+.image-right img {
+    max-width: 400px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .image-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-left, .image-center, .image-right {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .image-left img, .image-center img, .image-right img {
+        max-width: 100%;
+    }
+}
+
+header {
+    background: linear-gradient(90deg, #6ec0e5, #fd6f61);
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 60px; /* Adjust based on your logo size */
+    margin-right: 10px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  .nav-links li :hover {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  .nav-links li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+  .course-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+  }
+  .course-link :hover {
+    color: #ffffff;
+  }
+
+  /* Mobile Styles */
+  @media screen and (max-width: 768px) {
+  .nav-links {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  padding: 10px 0;
+  background: linear-gradient(90deg, #6ec0e5, #fd6f61);
+}
+  
+  .nav-links li {
+  margin: 10px 0;
+  text-align: center;
+  }
+  
+  .nav-links.active {
+  display: flex;
+  }
+  
+  .menu-toggle {
+  display: block;
+  }
+  }
