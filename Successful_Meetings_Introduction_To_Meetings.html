@@ -17,7 +17,6 @@
                 <a href="https://coursehub.live/" class="course-link"><span class="course">Course</span> <span class="hub">Hub</span></a>
             </div>
             <ul class="nav-links">
-                <li><a href="https://coursehub.live/">Home</a></li>
                 <li><a href="https://coursehub.live/android">Android App</a></li>
                 <li><a href="https://coursehub.live/ios">Ios App</a></li>
                 <li><a href="https://coursehub.live/about">About</a></li>
@@ -29,22 +28,30 @@
     </header>
 
 <div class="main-content">
-    <div class="container">
-        <h1>Word Bank Quiz</h1>
-        <div id="quiz">
-            <div class="question" id="question"></div>
-            <div class="options">
-                <div class="option" id="a" onclick="checkAnswer('a')">Option A</div>
-                <div class="option" id="b" onclick="checkAnswer('b')">Option B</div>
-                <div class="option" id="c" onclick="checkAnswer('c')">Option C</div>
-                <div class="option" id="d" onclick="checkAnswer('d')">Option D</div>
+        <div class="quiz-container">
+            <h1 class="quiz-title">Word Bank Challenge!</h1>
+            <div id="quiz-card" class="quiz-card">
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                </div>
+                <div class="question-header">
+                    <span class="question-number" id="question-number">1/15</span>
+                    <div class="question" id="question"></div>
+                </div>
+                <div class="options">
+                    <div class="option" id="a" onclick="checkAnswer('a')">A. </div>
+                    <div class="option" id="b" onclick="checkAnswer('b')">B. </div>
+                    <div class="option" id="c" onclick="checkAnswer('c')">C. </div>
+                    <div class="option" id="d" onclick="checkAnswer('d')">D. Option D</div>
+                </div>
+                <button class="quiz-button" id="nextBtn" onclick="nextQuestion()" disabled>Next Question</button>
             </div>
-            <button class="button" id="nextBtn" onclick="nextQuestion()">Next Question</button>
-            <div class="score" id="score">Score: <span>0</span></div>
-            <div class="message" id="message"></div>
+            <div class="quiz-footer">
+                <div class="score" id="score">Score: <span id="score-value">0</span></div>
+                <div class="message" id="message"></div>
+            </div>
         </div>
     </div>
-</div>
 
 <script>
     // Global variables
