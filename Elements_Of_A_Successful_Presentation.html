@@ -47,281 +47,283 @@
 </div>
 
 <script>
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
-
-    mobileMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
+    // Global variables
     const questions = [
-    {
-        question: "What is the role of a 'Presenter'?",
-        options: [
-            "To observe and listen in a discussion", 
-            "To engage and share information with an audience", // Correct answer
-            "To remain silent during a presentation", 
-            "To disrupt the flow of conversation"
-        ],
-        correctAnswer: "b"
-    },
-    {
-        question: "What does the 'Audience' refer to?",
-        options: [
-            "The person delivering the message", 
-            "The visual elements in the presentation", 
-            "The group of people who receive the message", // Correct answer
-            "The subject of the presentation"
-        ],
-        correctAnswer: "c"
-    },
-    {
-        question: "What are 'Needs' in the context of communication?",
-        options: [
-            "What the presenter desires to convey", 
-            "The fundamental requirements or gaps the audience wants to address", // Correct answer
-            "Irrelevant information to the audience", 
-            "Personal preferences of the presenter"
-        ],
-        correctAnswer: "b"
-    },
-    {
-        question: "What do 'Desires' refer to in a presentation?",
-        options: [
-            "The financial goals of the presenter", 
-            "The audience's wants or aspirations that the presentation may address", // Correct answer
-            "The speaker's personal desires", 
-            "The time limit of the presentation"
-        ],
-        correctAnswer: "b"
-    },
-    {
-        question: "What is meant by 'Attention' in communication?",
-        options: [
-            "The visual aids used in a presentation", 
-            "The audience's feedback", 
-            "The focus the audience gives to the speaker or message", // Correct answer
-            "The length of the presentation"
-        ],
-        correctAnswer: "c"
-    },
-    {
-        question: "What is the 'Message' in a presentation?",
-        options: [
-            "The emotions the presenter feels", 
-            "The background music used", 
-            "The information or ideas being communicated to the audience", // Correct answer
-            "The personal stories of the presenter"
-        ],
-        correctAnswer: "c"
-    },
-    {
-        question: "What is meant by 'Focus' in a presentation?",
-        options: [
-            "The technical aspects of the presentation", 
-            "The attention given to specific points within the message", // Correct answer
-            "The number of slides used", 
-            "The speaker’s personal anecdotes"
-        ],
-        correctAnswer: "b"
-    },
-    {
-        question: "What does 'Useful' mean in the context of communication?",
-        options: [
-            "The message is lengthy", 
-            "The message provides value and addresses audience needs", // Correct answer
-            "The message is easy to understand", 
-            "The message is humorous"
-        ],
-        correctAnswer: "b"
-    },
-    {
-        question: "What does 'Practical' imply in a presentation?",
-        options: [
-            "The content is unrealistic or too idealistic", 
-            "The presentation is only theoretical", 
-            "The information presented is actionable and relevant to the audience", // Correct answer
-            "The information is highly technical"
-        ],
-        correctAnswer: "c"
-    },
-    {
-        question: "What does 'Interesting' mean in the context of a message?",
-        options: [
-            "It makes the audience laugh", 
-            "It is long and detailed", 
-            "It keeps the audience's attention and curiosity engaged", // Correct answer
-            "It uses a lot of visual effects"
-        ],
-        correctAnswer: "c"
-    },
-    {
-        question: "What does 'Engaging' refer to in a presentation?",
-        options: [
-            "A presentation that captures and maintains audience interest", // Correct answer
-            "A boring and static presentation", 
-            "The number of slides used", 
-            "A presentation that is too formal"
-        ],
-        correctAnswer: "a"
-    },
-    {
-        question: "What does 'Curiosity' in a presentation trigger?",
-        options: [
-            "An eagerness to learn more and explore new ideas", // Correct answer
-            "A desire to leave the presentation", 
-            "An urge to challenge the presenter", 
-            "A need to sleep"
-        ],
-        correctAnswer: "a"
-    },
-    {
-        question: "What does 'Enjoyable' mean in the context of a presentation?",
-        options: [
-            "The presentation is fun and pleasant to attend", // Correct answer
-            "The audience is bored", 
-            "The speaker is quiet", 
-            "The topic is difficult to understand"
-        ],
-        correctAnswer: "a"
-    },
-    {
-        question: "What is the role of 'Humor' in a presentation?",
-        options: [
-            "To confuse the audience", 
-            "To distract from the main message", 
-            "To make the content more relatable and engaging", // Correct answer
-            "To make the presentation longer"
-        ],
-        correctAnswer: "c"
-    },
-    {
-        question: "What does 'Storytelling' bring to a presentation?",
-        options: [
-            "A technical approach", 
-            "A list of facts", 
-            "A way to connect with the audience emotionally and make the message memorable", // Correct answer
-            "A long introduction"
-        ],
-        correctAnswer: "c"
-    },
-    {
-        question: "What makes a presentation 'Memorable'?",
-        options: [
-            "It is over in 5 minutes", 
-            "It includes lots of statistics", 
-            "It makes a lasting impact through emotional connection or valuable insights", // Correct answer
-            "It uses only text"
-        ],
-        correctAnswer: "c"
-    },
-    {
-        question: "What does 'Solutions' mean in a presentation?",
-        options: [
-            "Problems that are discussed without resolution", 
-            "The speaker’s opinion", 
-            "Ideas presented to solve a problem or address an issue", // Correct answer
-            "Personal experiences shared"
-        ],
-        correctAnswer: "c"
-    },
-    {
-        question: "What are 'Tangible Benefits' in communication?",
-        options: [
-            "Theoretical concepts", 
-            "Difficult ideas that require high-level expertise", 
-            "Practical advantages or results the audience can use", // Correct answer
-            "Personal opinions"
-        ],
-        correctAnswer: "c"
-    },
-    {
-        question: "What does 'Insight' in a presentation provide?",
-        options: [
-            "Shallow opinions", 
-            "The speaker’s emotions", 
-            "A deep understanding of the topic or issue", // Correct answer
-            "Irrelevant details"
-        ],
-        correctAnswer: "c"
-    },
-    {
-        question: "What does it mean to 'Captivate' the audience?",
-        options: [
-            "To grab and hold the audience's attention through engaging delivery", // Correct answer
-            "To bore the audience", 
-            "To avoid eye contact", 
-            "To give a lengthy lecture"
-        ],
-        correctAnswer: "a"
-    },
-    {
-        question: "What does it mean for a message to 'Resonate' with the audience?",
-        options: [
-            "It emotionally connects with the audience and is remembered", // Correct answer
-            "It confuses the audience", 
-            "It is too complex to understand", 
-            "It makes the audience leave early"
-        ],
-        correctAnswer: "a"
-    },
-    {
-        question: "What is the 'Purpose' of a presentation?",
-        options: [
-            "To entertain the audience only", 
-            "To convey specific information or ideas with clarity", // Correct answer
-            "To take up time", 
-            "To confuse the audience"
-        ],
-        correctAnswer: "b"
-    }
+{
+    question: "What is the role of a 'Presenter'?",
+    options: [
+        "To observe and listen in a discussion", 
+        "To engage and share information with an audience", // Correct answer
+        "To remain silent during a presentation", 
+        "To disrupt the flow of conversation"
+    ],
+    correctAnswer: "b"
+},
+{
+    question: "What does the 'Audience' refer to?",
+    options: [
+        "The person delivering the message", 
+        "The visual elements in the presentation", 
+        "The group of people who receive the message", // Correct answer
+        "The subject of the presentation"
+    ],
+    correctAnswer: "c"
+},
+{
+    question: "What are 'Needs' in the context of communication?",
+    options: [
+        "What the presenter desires to convey", 
+        "The fundamental requirements or gaps the audience wants to address", // Correct answer
+        "Irrelevant information to the audience", 
+        "Personal preferences of the presenter"
+    ],
+    correctAnswer: "b"
+},
+{
+    question: "What do 'Desires' refer to in a presentation?",
+    options: [
+        "The financial goals of the presenter", 
+        "The audience's wants or aspirations that the presentation may address", // Correct answer
+        "The speaker's personal desires", 
+        "The time limit of the presentation"
+    ],
+    correctAnswer: "b"
+},
+{
+    question: "What is meant by 'Attention' in communication?",
+    options: [
+        "The visual aids used in a presentation", 
+        "The audience's feedback", 
+        "The focus the audience gives to the speaker or message", // Correct answer
+        "The length of the presentation"
+    ],
+    correctAnswer: "c"
+},
+{
+    question: "What is the 'Message' in a presentation?",
+    options: [
+        "The emotions the presenter feels", 
+        "The background music used", 
+        "The information or ideas being communicated to the audience", // Correct answer
+        "The personal stories of the presenter"
+    ],
+    correctAnswer: "c"
+},
+{
+    question: "What is meant by 'Focus' in a presentation?",
+    options: [
+        "The technical aspects of the presentation", 
+        "The attention given to specific points within the message", // Correct answer
+        "The number of slides used", 
+        "The speaker’s personal anecdotes"
+    ],
+    correctAnswer: "b"
+},
+{
+    question: "What does 'Useful' mean in the context of communication?",
+    options: [
+        "The message is lengthy", 
+        "The message provides value and addresses audience needs", // Correct answer
+        "The message is easy to understand", 
+        "The message is humorous"
+    ],
+    correctAnswer: "b"
+},
+{
+    question: "What does 'Practical' imply in a presentation?",
+    options: [
+        "The content is unrealistic or too idealistic", 
+        "The presentation is only theoretical", 
+        "The information presented is actionable and relevant to the audience", // Correct answer
+        "The information is highly technical"
+    ],
+    correctAnswer: "c"
+},
+{
+    question: "What does 'Interesting' mean in the context of a message?",
+    options: [
+        "It makes the audience laugh", 
+        "It is long and detailed", 
+        "It keeps the audience's attention and curiosity engaged", // Correct answer
+        "It uses a lot of visual effects"
+    ],
+    correctAnswer: "c"
+},
+{
+    question: "What does 'Engaging' refer to in a presentation?",
+    options: [
+        "A presentation that captures and maintains audience interest", // Correct answer
+        "A boring and static presentation", 
+        "The number of slides used", 
+        "A presentation that is too formal"
+    ],
+    correctAnswer: "a"
+},
+{
+    question: "What does 'Curiosity' in a presentation trigger?",
+    options: [
+        "An eagerness to learn more and explore new ideas", // Correct answer
+        "A desire to leave the presentation", 
+        "An urge to challenge the presenter", 
+        "A need to sleep"
+    ],
+    correctAnswer: "a"
+},
+{
+    question: "What does 'Enjoyable' mean in the context of a presentation?",
+    options: [
+        "The presentation is fun and pleasant to attend", // Correct answer
+        "The audience is bored", 
+        "The speaker is quiet", 
+        "The topic is difficult to understand"
+    ],
+    correctAnswer: "a"
+},
+{
+    question: "What is the role of 'Humor' in a presentation?",
+    options: [
+        "To confuse the audience", 
+        "To distract from the main message", 
+        "To make the content more relatable and engaging", // Correct answer
+        "To make the presentation longer"
+    ],
+    correctAnswer: "c"
+},
+{
+    question: "What does 'Storytelling' bring to a presentation?",
+    options: [
+        "A technical approach", 
+        "A list of facts", 
+        "A way to connect with the audience emotionally and make the message memorable", // Correct answer
+        "A long introduction"
+    ],
+    correctAnswer: "c"
+},
+{
+    question: "What makes a presentation 'Memorable'?",
+    options: [
+        "It is over in 5 minutes", 
+        "It includes lots of statistics", 
+        "It makes a lasting impact through emotional connection or valuable insights", // Correct answer
+        "It uses only text"
+    ],
+    correctAnswer: "c"
+},
+{
+    question: "What does 'Solutions' mean in a presentation?",
+    options: [
+        "Problems that are discussed without resolution", 
+        "The speaker’s opinion", 
+        "Ideas presented to solve a problem or address an issue", // Correct answer
+        "Personal experiences shared"
+    ],
+    correctAnswer: "c"
+},
+{
+    question: "What are 'Tangible Benefits' in communication?",
+    options: [
+        "Theoretical concepts", 
+        "Difficult ideas that require high-level expertise", 
+        "Practical advantages or results the audience can use", // Correct answer
+        "Personal opinions"
+    ],
+    correctAnswer: "c"
+},
+{
+    question: "What does 'Insight' in a presentation provide?",
+    options: [
+        "Shallow opinions", 
+        "The speaker’s emotions", 
+        "A deep understanding of the topic or issue", // Correct answer
+        "Irrelevant details"
+    ],
+    correctAnswer: "c"
+},
+{
+    question: "What does it mean to 'Captivate' the audience?",
+    options: [
+        "To grab and hold the audience's attention through engaging delivery", // Correct answer
+        "To bore the audience", 
+        "To avoid eye contact", 
+        "To give a lengthy lecture"
+    ],
+    correctAnswer: "a"
+},
+{
+    question: "What does it mean for a message to 'Resonate' with the audience?",
+    options: [
+        "It emotionally connects with the audience and is remembered", // Correct answer
+        "It confuses the audience", 
+        "It is too complex to understand", 
+        "It makes the audience leave early"
+    ],
+    correctAnswer: "a"
+},
+{
+    question: "What is the 'Purpose' of a presentation?",
+    options: [
+        "To entertain the audience only", 
+        "To convey specific information or ideas with clarity", // Correct answer
+        "To take up time", 
+        "To confuse the audience"
+    ],
+    correctAnswer: "b"
+}
 ];
 
     let currentQuestionIndex = 0;
     let score = 0;
     let answeringDisabled = false;
 
+    // Function to load the current question
     function loadQuestion() {
+        updateProgressBar();
         const question = questions[currentQuestionIndex];
+        document.getElementById('question-number').textContent = `${currentQuestionIndex + 1}/${questions.length}`;
         document.getElementById('question').textContent = question.question;
+
         const options = document.querySelectorAll('.option');
         options.forEach((option, index) => {
-            option.textContent = question.options[index];
-            option.style.backgroundColor = '#f8f9fa';  // Reset background color
-            option.style.pointerEvents = 'auto';  // Enable option click again
+            option.textContent = question.options[index]; // Removed prefixes here !
+            option.style.pointerEvents = 'auto';
+            option.classList.remove('selected', 'correct', 'incorrect', 'animate-correct', 'animate-incorrect');
         });
-        document.getElementById('nextBtn').disabled = true;  // Disable next button initially
+
+        document.getElementById('nextBtn').disabled = true;
     }
 
+    // Function to update the progress bar
+    function updateProgressBar() {
+        const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+        document.getElementById('progress-bar-fill').style.width = `${progress}%`;
+    }
+
+    // Function to check the selected answer
     function checkAnswer(answer) {
-        if (answeringDisabled) return;  // Prevent multiple selections
+        if (answeringDisabled) return;
         answeringDisabled = true;
 
         const correctAnswer = questions[currentQuestionIndex].correctAnswer;
         const options = document.querySelectorAll('.option');
+        const selectedOption = document.getElementById(answer);
+
+        selectedOption.classList.add('selected');
 
         options.forEach((option) => {
-            option.style.pointerEvents = 'none';  // Disable further clicks
-            if (option.id === answer) {
-                if (answer === correctAnswer) {
-                    option.style.backgroundColor = '#6ec0e5';  // Correct answer color
-                    score++;
-                } else {
-                    option.style.backgroundColor = '#fd6f61';  // Incorrect answer color
-                }
-            } else if (option.id === correctAnswer) {
-                option.style.backgroundColor = '#6ec0e5';  // Correct answer color
+            option.style.pointerEvents = 'none';
+            if (option.id === correctAnswer) {
+                option.classList.add('correct', 'animate-correct');
+                if (option.id === answer) score++;
+            } else if (option.id === answer) {
+                option.classList.add('incorrect', 'animate-incorrect');
             }
         });
 
-        document.getElementById('score').innerHTML = `Score: <span>${score}</span>`;
-        document.getElementById('nextBtn').disabled = false;  // Enable the next button
+        document.getElementById('score-value').textContent = score;
+        document.getElementById('nextBtn').disabled = false;
     }
 
-
-
-
-
+    // Function to load the next question
     function nextQuestion() {
         if (currentQuestionIndex < questions.length - 1) {
             currentQuestionIndex++;
@@ -332,33 +334,35 @@
         }
     }
 
+    // Function to display the final message
     function showFinalMessage() {
         let message = '';
-        let messageColor;
         const totalQuestions = questions.length;
-        const quarterQuestions = totalQuestions / 4;
-        const halfQuestions = totalQuestions / 2;
 
-        if (score < quarterQuestions) {
+        if (score < totalQuestions / 4) {
             message = "🥺Oops, looks like you need to brush up on your word bank skills! Try again!🥺";
-            messageColor = "#fd6f61";  // Red for low score
-        } else if (score <= halfQuestions) {
+        } else if (score <= totalQuestions / 2) {
             message = "😉Great job! You're getting better, but there's room for improvement!😉";
-            messageColor = "green";  // Green for medium score
         } else {
             message = "👑Amazing! You've aced it, perfect score! You're a word bank champion!👑";
-            messageColor = "#4fa3b9";  // Darker blue for high score
         }
 
         const messageElement = document.getElementById('message');
         messageElement.textContent = message;
-        messageElement.style.color = messageColor;
-        messageElement.style.opacity = 1;  // Make the message visible
-        messageElement.style.fontWeight = "bold";  // Ensure message stands out
+        messageElement.style.opacity = 1;
     }
 
-    // Initialize the first question
-    loadQuestion();
+    // DOMContentLoaded event for initialization
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        loadQuestion(); // Initialize the quiz
+    });
 </script>
 
 </body>

@@ -1,0 +1,452 @@
+/* style.css */
+
+/* Reset and Basic Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    flex: 1;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+    color: #151414; /* --night */
+    background-color: #f5f0f0; /* --snow */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: #fe9a0f;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Style for colored letters in H1 (G and H in Gift Hub) */
+.colored-letter {
+    color: #fe9a0f; /* Your brand orange color */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    position: relative; /* Important for positioning nav-toggle */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8em;
+    color: #151414;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: #151414;
+    font-weight: 500;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    text-decoration: none;
+    background-color: #ddd;
+}
+
+/* Hero Section - Visually Improved based on Screenshot */
+#hero {
+    background-color: #fdf5e6; /* Light Beige/Cream Background (similar to screenshot) */ /* NEW Background Color */
+    padding: 80px 0; /* Increased padding for more visual space */         /* NEW Padding */
+    text-align: left; /* Align text to the left */                         /* NEW Text Alignment */
+}
+
+#hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+#hero h2 {
+    font-size: 3.0em; /* Increased font size for heading */             /* NEW Font Size */
+    margin-bottom: 25px; /* Adjusted margin below heading */           /* NEW Margin-bottom */
+    color: #151414; /* Keep --night color for heading text */
+    font-weight: 700; /* Make heading bolder */                        /* NEW Font Weight */
+    line-height: 1.2; /* Improved line height for heading */            /* NEW Line Height */
+}
+
+#hero p {
+    font-size: 1.1em;
+    color: #444; /* Slightly darker paragraph text */                    /* NEW Text Color - Slightly darker */
+    max-width: 600px; /* Reduced max-width for paragraph text */        /* NEW Max-width */
+    margin: 0; /* Reset default paragraph margins */                     /* NEW Reset Margins */
+}
+
+#hero .hero-image {
+    width: 45%; /* Slightly wider image container */                     /* NEW Width - Slightly wider */
+    max-width: 600px; /* Increased max-width for image */                /* NEW Max-width - Increased */
+    text-align: right;
+}
+
+#hero .hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Slightly more rounded corners for image */     /* NEW - More Rounded Corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */ /* NEW - Stronger Shadow */
+}
+
+
+
+/* Gift Card Catalogue */
+#gift-card-catalogue {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+#gift-card-catalogue h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #151414;
+}
+
+.gift-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gift-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.gift-card-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+.gift-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #151414;
+}
+
+/* Gift Card Title Link Styling */
+.gift-card-link {
+    text-decoration: none; /* Remove default link underline */
+    color: inherit; /* Inherit color from parent (<h3> color) */
+    display: block; /* Make link a block-level element to fill the h3 area */
+}
+
+.gift-card-link:hover {
+    text-decoration: underline; /* Add underline on hover to indicate it's a link */
+    color: inherit; /* Keep inherited color on hover */
+}
+.gift-card .description, .gift-card .price, .gift-card .discount {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.gift-card .price {
+    font-weight: bolder; /* Make it even bolder */
+    font-size: 1.4em;    /* Increase the font size (adjust as needed) */
+    color: #222;         /* Slightly darker text color (adjust as needed - could try #000 for black if you want it very strong) */
+    text-shadow: 1px 1px 0px rgba(200, 200, 200, 0.3); /* Add a subtle text shadow for depth */
+}
+/* Messenger Button */
+.messenger-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #0078FF; /* Messenger Blue */
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Keep box-shadow transition if you like it */
+    box-shadow: 0 0 5px rgba(0, 120, 255, 0.5); /* Subtle Blue Shadow (adjust if needed) */
+    text-decoration: none; /* Remove underline */
+}
+
+.messenger-button:hover {
+    background-color: #005bb8; /* Darker Messenger Blue on hover */
+    text-decoration: none; /* Remove underline on hover */
+    box-shadow: 0 0 10px rgba(0, 120, 255, 0.7); /* Blue glow on hover (adjust if needed) */
+}
+.gift-card:hover {
+    box-shadow: 0 0 15px rgba(255, 154, 15, 0.3); /* Very faint orange glow on card hover */
+    transform: translateY(-3px); /* Slightly lift the card on hover for a subtle effect */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.gift-card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transition to the normal state too for smooth return */
+}
+#hero h2, #hero p {
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s ease-out 0.3s forwards; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; } /* Fade to fully visible */
+}
+
+
+/* Footer */
+footer {
+    background-color: #151414;
+    color: #f5f0f0;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Scroll-Triggered Section Animations */
+
+section { /* Target all sections */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially moved slightly to the left */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition for animation */
+}
+
+section.slide-from-left {
+    opacity: 1; /* Fade in and slide into view */
+    transform: translateX(0); /* Slide to its normal position */
+}
+
+section.slide-from-right {
+    opacity: 1; /* Fade in and slide into view */
+    transform: translateX(0); /* Slide to its normal position */
+}
+
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Mobile Styles and Navigation Toggle */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    header .container {
+        flex-direction: column;
+        text-align: center;
+        position: relative; /* Ensure container is relative for absolute positioning of toggle */
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+        font-size: 1.5em;
+    }
+
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 0.5em;
+        right: 1em;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        display: block;
+        background-color: #151414;
+        height: 3px;
+        width: 25px;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        position: absolute;
+    }
+
+    .hamburger::before {
+        transform: translateY(-8px);
+    }
+
+    .hamburger::after {
+        transform: translateY(8px);
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #f3eeee;
+        padding: 1em;
+        text-align: center;
+        z-index: 10;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin-bottom: 15px;
+        margin-left: 0; /* Reset list item left margin for mobile nav */
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 15px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Ensure nav ul is also column in mobile */
+        text-align: center; /* Center align nav items in mobile */
+    }
+
+    nav li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        display: block;
+    }
+
+    #hero {
+        padding: 40px 0;
+    }
+
+    #hero h2 {
+        font-size: 2em;
+    }
+
+    #hero p {
+        font-size: 1em;
+    }
+    #hero .container {
+        flex-direction: column; /* Stack content vertically on mobile */
+        text-align: center; /* Center align text on mobile */
+    }
+
+    #hero .hero-content {
+        padding-right: 0; /* Reset right padding for text on mobile */
+    }
+
+    #hero .hero-image {
+        display: none; /* Hide hero image on mobile screens */
+    }
+
+    #gift-card-catalogue {
+        padding: 30px 0;
+    }
+
+    #gift-card-catalogue h2 {
+        font-size: 1.8em;
+    }
+
+    .gift-card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .gift-card {
+        padding: 15px;
+    }
+
+    .gift-card h3 {
+        font-size: 1.3em;
+    }
+
+    .gift-card .description, .gift-card .price, .gift-card .discount {
+        font-size: 0.95em;
+    }
+
+    .whatsapp-button {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+
+    footer {
+        padding: 15px 0;
+        font-size: 0.9em;
+    }
+
+    .nav-open .nav-links {
+        display: block;
+    }
+
+    .nav-open .hamburger {
+        transform: rotate(45deg);
+        background-color: #fe9a0f; /* keep hamburger orange when nav open */
+    }
+
+    .nav-open .hamburger::before {
+        opacity: 0;
+    }
+
+    .nav-open .hamburger::after {
+        transform: translateY(-8px) rotate(-90deg);
+    }
+}
+

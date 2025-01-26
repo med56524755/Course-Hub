@@ -47,219 +47,223 @@
 </div>
 
 <script>
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
-
-    mobileMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
+    // Global variables
     const questions = [
-    {
-        question: "What is the role of a 'Leader/Chair' in a meeting?",
-        options: [
-            "To observe and listen to the discussion", 
-            "To engage and share information with participants", 
-            "To lead and guide the meeting, ensuring it stays on track", 
-            "To remain silent during the meeting"
-        ],
-        correctAnswer: "c" // Correct answer
-    },
-    {
-        question: "What does the 'Agenda' refer to in a meeting?",
-        options: [
-            "The list of participants", 
-            "The physical location of the meeting", 
-            "The structured list of topics or items to be discussed", 
-            "The minutes of the previous meeting"
-        ],
-        correctAnswer: "c" // Correct answer
-    },
-    {
-        question: "What is meant by 'Minutes' in the context of meetings?",
-        options: [
-            "The formal written record of what was discussed and decided", 
-            "The time allotted for the meeting", 
-            "The refreshments served during the meeting", 
-            "The agenda items"
-        ],
-        correctAnswer: "a" // Correct answer
-    },
-    {
-        question: "What is an 'Action Item' in a meeting?",
-        options: [
-            "A list of tasks to be completed", 
-            "A decision that needs to be made by the group", 
-            "A task assigned to a participant to take action on", 
-            "A summary of the meeting's discussions"
-        ],
-        correctAnswer: "c" // Correct answer
-    },
-    {
-        question: "What is a 'Teleconference'?",
-        options: [
-            "A meeting held over the phone or via online video", 
-            "A face-to-face meeting with all participants", 
-            "A meeting held via email exchanges", 
-            "A meeting only for socializing"
-        ],
-        correctAnswer: "a" // Correct answer
-    },
-    {
-        question: "What is the 'Purpose' of a 'Kickoff Meeting'?",
-        options: [
-            "To introduce the team and set expectations for a project", 
-            "To evaluate the progress of a project", 
-            "To provide a formal summary of a project's conclusion", 
-            "To brainstorm new ideas for the project"
-        ],
-        correctAnswer: "a" // Correct answer
-    },
-    {
-        question: "What does 'Time Management' in a meeting refer to?",
-        options: [
-            "Ensuring the meeting starts and ends on time", 
-            "The location of the meeting", 
-            "The way to assign tasks during a meeting", 
-            "The size of the meeting room"
-        ],
-        correctAnswer: "a" // Correct answer
-    },
-    {
-        question: "What is the 'Purpose' of a 'Progress Report' in a meeting?",
-        options: [
-            "To discuss ongoing issues only", 
-            "To report on the current status of a project or initiative", 
-            "To summarize all meeting decisions", 
-            "To schedule the next meeting"
-        ],
-        correctAnswer: "b" // Correct answer
-    },
-    {
-        question: "What is a 'Networking Meeting'?",
-        options: [
-            "A formal meeting to make decisions", 
-            "A gathering focused on building professional relationships", 
-            "A meeting for making detailed progress reports", 
-            "A one-on-one discussion with a team leader"
-        ],
-        correctAnswer: "b" // Correct answer
-    },
-    {
-        question: "What is a 'Project Meeting' focused on?",
-        options: [
-            "Discussing ideas for new projects", 
-            "Reviewing the status of tasks and deadlines related to a specific project", 
-            "Networking with colleagues", 
-            "Establishing meeting rules"
-        ],
-        correctAnswer: "b" // Correct answer
-    },
-    {
-        question: "What is a 'Debrief Meeting'?",
-        options: [
-            "A meeting to assess and review the outcomes of a completed task or event", 
-            "A meeting for brainstorming ideas", 
-            "A meeting where new action items are assigned", 
-            "A meeting where the next project is introduced"
-        ],
-        correctAnswer: "a" // Correct answer
-    },
-    {
-        question: "What is a 'Brainstorming' session?",
-        options: [
-            "A meeting where participants generate ideas and solutions freely", 
-            "A meeting where detailed reports are presented", 
-            "A formal decision-making meeting", 
-            "A meeting to check project progress"
-        ],
-        correctAnswer: "a" // Correct answer
-    },
-    {
-        question: "What is meant by 'Participants' in a meeting?",
-        options: [
-            "The leader or chairperson of the meeting", 
-            "The people attending and contributing to the meeting", 
-            "The person who records the minutes", 
-            "The organizer of the meeting"
-        ],
-        correctAnswer: "b" // Correct answer
-    },
-    {
-        question: "What is an 'Information Meeting'?",
-        options: [
-            "A meeting where decisions are made", 
-            "A meeting where new information is shared with the participants", 
-            "A meeting focused on action items", 
-            "A meeting to discuss networking opportunities"
-        ],
-        correctAnswer: "b" // Correct answer
-    },
-    {
-        question: "What is the purpose of 'Decision-making' in a meeting?",
-        options: [
-            "To assign tasks", 
-            "To make final choices about key issues or actions", 
-            "To record meeting minutes", 
-            "To plan for future meetings"
-        ],
-        correctAnswer: "b" // Correct answer
-    },
-    {
-        question: "What is the 'Location' of a meeting?",
-        options: [
-            "The physical or virtual space where the meeting takes place", // Correct answer
-            "The participants involved", 
-            "The agenda of the meeting", 
-            "The action items assigned"
-        ],
-        correctAnswer: "a" // Correct answer
-    }
+{
+    question: "What is the role of a 'Leader/Chair' in a meeting?",
+    options: [
+        "To observe and listen to the discussion", 
+        "To engage and share information with participants", 
+        "To lead and guide the meeting, ensuring it stays on track", 
+        "To remain silent during the meeting"
+    ],
+    correctAnswer: "c" // Correct answer
+},
+{
+    question: "What does the 'Agenda' refer to in a meeting?",
+    options: [
+        "The list of participants", 
+        "The physical location of the meeting", 
+        "The structured list of topics or items to be discussed", 
+        "The minutes of the previous meeting"
+    ],
+    correctAnswer: "c" // Correct answer
+},
+{
+    question: "What is meant by 'Minutes' in the context of meetings?",
+    options: [
+        "The formal written record of what was discussed and decided", 
+        "The time allotted for the meeting", 
+        "The refreshments served during the meeting", 
+        "The agenda items"
+    ],
+    correctAnswer: "a" // Correct answer
+},
+{
+    question: "What is an 'Action Item' in a meeting?",
+    options: [
+        "A list of tasks to be completed", 
+        "A decision that needs to be made by the group", 
+        "A task assigned to a participant to take action on", 
+        "A summary of the meeting's discussions"
+    ],
+    correctAnswer: "c" // Correct answer
+},
+{
+    question: "What is a 'Teleconference'?",
+    options: [
+        "A meeting held over the phone or via online video", 
+        "A face-to-face meeting with all participants", 
+        "A meeting held via email exchanges", 
+        "A meeting only for socializing"
+    ],
+    correctAnswer: "a" // Correct answer
+},
+{
+    question: "What is the 'Purpose' of a 'Kickoff Meeting'?",
+    options: [
+        "To introduce the team and set expectations for a project", 
+        "To evaluate the progress of a project", 
+        "To provide a formal summary of a project's conclusion", 
+        "To brainstorm new ideas for the project"
+    ],
+    correctAnswer: "a" // Correct answer
+},
+{
+    question: "What does 'Time Management' in a meeting refer to?",
+    options: [
+        "Ensuring the meeting starts and ends on time", 
+        "The location of the meeting", 
+        "The way to assign tasks during a meeting", 
+        "The size of the meeting room"
+    ],
+    correctAnswer: "a" // Correct answer
+},
+{
+    question: "What is the 'Purpose' of a 'Progress Report' in a meeting?",
+    options: [
+        "To discuss ongoing issues only", 
+        "To report on the current status of a project or initiative", 
+        "To summarize all meeting decisions", 
+        "To schedule the next meeting"
+    ],
+    correctAnswer: "b" // Correct answer
+},
+{
+    question: "What is a 'Networking Meeting'?",
+    options: [
+        "A formal meeting to make decisions", 
+        "A gathering focused on building professional relationships", 
+        "A meeting for making detailed progress reports", 
+        "A one-on-one discussion with a team leader"
+    ],
+    correctAnswer: "b" // Correct answer
+},
+{
+    question: "What is a 'Project Meeting' focused on?",
+    options: [
+        "Discussing ideas for new projects", 
+        "Reviewing the status of tasks and deadlines related to a specific project", 
+        "Networking with colleagues", 
+        "Establishing meeting rules"
+    ],
+    correctAnswer: "b" // Correct answer
+},
+{
+    question: "What is a 'Debrief Meeting'?",
+    options: [
+        "A meeting to assess and review the outcomes of a completed task or event", 
+        "A meeting for brainstorming ideas", 
+        "A meeting where new action items are assigned", 
+        "A meeting where the next project is introduced"
+    ],
+    correctAnswer: "a" // Correct answer
+},
+{
+    question: "What is a 'Brainstorming' session?",
+    options: [
+        "A meeting where participants generate ideas and solutions freely", 
+        "A meeting where detailed reports are presented", 
+        "A formal decision-making meeting", 
+        "A meeting to check project progress"
+    ],
+    correctAnswer: "a" // Correct answer
+},
+{
+    question: "What is meant by 'Participants' in a meeting?",
+    options: [
+        "The leader or chairperson of the meeting", 
+        "The people attending and contributing to the meeting", 
+        "The person who records the minutes", 
+        "The organizer of the meeting"
+    ],
+    correctAnswer: "b" // Correct answer
+},
+{
+    question: "What is an 'Information Meeting'?",
+    options: [
+        "A meeting where decisions are made", 
+        "A meeting where new information is shared with the participants", 
+        "A meeting focused on action items", 
+        "A meeting to discuss networking opportunities"
+    ],
+    correctAnswer: "b" // Correct answer
+},
+{
+    question: "What is the purpose of 'Decision-making' in a meeting?",
+    options: [
+        "To assign tasks", 
+        "To make final choices about key issues or actions", 
+        "To record meeting minutes", 
+        "To plan for future meetings"
+    ],
+    correctAnswer: "b" // Correct answer
+},
+{
+    question: "What is the 'Location' of a meeting?",
+    options: [
+        "The physical or virtual space where the meeting takes place", // Correct answer
+        "The participants involved", 
+        "The agenda of the meeting", 
+        "The action items assigned"
+    ],
+    correctAnswer: "a" // Correct answer
+}
 ];
-
-
 
     let currentQuestionIndex = 0;
     let score = 0;
     let answeringDisabled = false;
 
+    // Function to load the current question
     function loadQuestion() {
+        updateProgressBar();
         const question = questions[currentQuestionIndex];
+        document.getElementById('question-number').textContent = `${currentQuestionIndex + 1}/${questions.length}`;
         document.getElementById('question').textContent = question.question;
+
         const options = document.querySelectorAll('.option');
         options.forEach((option, index) => {
-            option.textContent = question.options[index];
-            option.style.backgroundColor = '#f8f9fa';  // Reset background color
-            option.style.pointerEvents = 'auto';  // Enable option click again
+            option.textContent = question.options[index]; // Removed prefixes here !
+            option.style.pointerEvents = 'auto';
+            option.classList.remove('selected', 'correct', 'incorrect', 'animate-correct', 'animate-incorrect');
         });
-        document.getElementById('nextBtn').disabled = true;  // Disable next button initially
+
+        document.getElementById('nextBtn').disabled = true;
     }
 
+    // Function to update the progress bar
+    function updateProgressBar() {
+        const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+        document.getElementById('progress-bar-fill').style.width = `${progress}%`;
+    }
+
+    // Function to check the selected answer
     function checkAnswer(answer) {
-        if (answeringDisabled) return;  // Prevent multiple selections
+        if (answeringDisabled) return;
         answeringDisabled = true;
 
         const correctAnswer = questions[currentQuestionIndex].correctAnswer;
         const options = document.querySelectorAll('.option');
+        const selectedOption = document.getElementById(answer);
+
+        selectedOption.classList.add('selected');
 
         options.forEach((option) => {
-            option.style.pointerEvents = 'none';  // Disable further clicks
-            if (option.id === answer) {
-                if (answer === correctAnswer) {
-                    option.style.backgroundColor = '#6ec0e5';  // Correct answer color
-                    score++;
-                } else {
-                    option.style.backgroundColor = '#fd6f61';  // Incorrect answer color
-                }
-            } else if (option.id === correctAnswer) {
-                option.style.backgroundColor = '#6ec0e5';  // Correct answer color
+            option.style.pointerEvents = 'none';
+            if (option.id === correctAnswer) {
+                option.classList.add('correct', 'animate-correct');
+                if (option.id === answer) score++;
+            } else if (option.id === answer) {
+                option.classList.add('incorrect', 'animate-incorrect');
             }
         });
 
-        document.getElementById('score').innerHTML = `Score: <span>${score}</span>`;
-        document.getElementById('nextBtn').disabled = false;  // Enable the next button
+        document.getElementById('score-value').textContent = score;
+        document.getElementById('nextBtn').disabled = false;
     }
 
+    // Function to load the next question
     function nextQuestion() {
         if (currentQuestionIndex < questions.length - 1) {
             currentQuestionIndex++;
@@ -270,34 +274,37 @@
         }
     }
 
+    // Function to display the final message
     function showFinalMessage() {
         let message = '';
-        let messageColor;
         const totalQuestions = questions.length;
-        const quarterQuestions = totalQuestions / 4;
-        const halfQuestions = totalQuestions / 2;
 
-        if (score < quarterQuestions) {
+        if (score < totalQuestions / 4) {
             message = "🥺Oops, looks like you need to brush up on your word bank skills! Try again!🥺";
-            messageColor = "#fd6f61";  // Red for low score
-        } else if (score <= halfQuestions) {
+        } else if (score <= totalQuestions / 2) {
             message = "😉Great job! You're getting better, but there's room for improvement!😉";
-            messageColor = "green";  // Green for medium score
         } else {
             message = "👑Amazing! You've aced it, perfect score! You're a word bank champion!👑";
-            messageColor = "#4fa3b9";  // Darker blue for high score
         }
 
         const messageElement = document.getElementById('message');
         messageElement.textContent = message;
-        messageElement.style.color = messageColor;
-        messageElement.style.opacity = 1;  // Make the message visible
-        messageElement.style.fontWeight = "bold";  // Ensure message stands out
+        messageElement.style.opacity = 1;
     }
 
-    // Initialize the first question
-    loadQuestion();
+    // DOMContentLoaded event for initialization
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        loadQuestion(); // Initialize the quiz
+    });
 </script>
+
 
 </body>
 </html>

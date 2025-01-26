@@ -2,7 +2,10 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f9; /* Light grey background */
+    color: #333;
 }
+
 header {
     position: sticky;
     top: 0;
@@ -48,7 +51,7 @@ font-weight: bold;
 display: none;
 }
 
-/* Mobile Styles */
+/* Mobile Styles for Header */
 @media screen and (max-width: 768px) {
 .nav-links {
 display: none;
@@ -90,40 +93,76 @@ color: #6ec0e5;
 color: #fd6f61;
 }
 
-/* Main Container */
-.container {
-    margin-top: 10px;
-    display: flex;
-    justify-content: left;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px;
-    flex-wrap: wrap;
+/* Main Lessons Container */
+.lessons-container {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 20px auto; /* Center container and add top margin */
 }
-/* Responsive Video Wrapper */
-.video-container {
-    flex: 1;
-    max-width: 480px;
-    aspect-ratio: 16 / 9;
+
+/* Lesson Card Styling */
+.lesson-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Spacing between lesson cards */
+    overflow: hidden; /* Ensure rounded corners clip content */
+    display: flex; /* Enable Flexbox layout for card content */
+    flex-direction: column; /* Stack video and info vertically */
 }
-.video-container iframe {
+
+/* Video Container within Card */
+.lesson-card .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio for video */
+    overflow: hidden;
+}
+
+.lesson-card .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: 0;
 }
-/* Video Information Section */
-.video-info {
-    flex: 1;
+
+/* Lesson Information Section (Updated - justify-content removed, title height limited) */
+.lesson-card .lesson-info {
+    padding: 25px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px; /* Spacing between lesson title and actions */
+    text-align: center; /* Center text content in lesson info */
+    /* justify-content: space-between; Removed: Button alignment - Reverted to default */
 }
-.video-info h2 {
+
+.lesson-card .lesson-info .lesson-title {
+    font-size: 1.8em;
     margin: 0;
-    font-size: 1.5rem;
     color: #333;
+    max-height: 5.5em; /* **NEW:** Limit title height to about 3 lines (adjust as needed) */
+    overflow: hidden; /* **NEW:** Hide overflowing text */
+    text-overflow: ellipsis; /* **NEW:** Show ellipsis (...) for overflow */
+    word-wrap: break-word; /* **NEW:** Enable text wrapping within title */
+    -webkit-line-clamp: 3; /* **NEW:** Limit to 3 lines in WebKit browsers */
+    line-clamp: 3; /* Standard property for compatibility */
+    display: -webkit-box; /* **NEW:** Enable line clamping */
+    -webkit-box-orient: vertical; /* **NEW:** Vertical orientation for line clamping */
 }
-.btn {
+
+/* Lesson Actions (Buttons) Container */
+.lesson-card .lesson-info .lesson-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    gap: 15px; /* Spacing between buttons */
+    align-items: center; /* Center buttons horizontally */
+}
+
+
+/* Button Styles (General and Specific Button Styles - Mostly No Changes, Adjusted for Card Context) */
+.btn { /* General Button Styles (No Changes) */
     padding: 10px 20px;
     background-color: #007BFF;
     color: white;
@@ -134,7 +173,7 @@ color: #fd6f61;
     text-align: center;
     transition: background-color 0.3s ease;
 }
-.btn:hover {
+.btn:hover { /* General Button Hover Styles (No Changes) */
     background-color: #0056b3;
 }
 /* Download Video Button */
@@ -166,17 +205,164 @@ color: #fd6f61;
 .quiz-btn:hover {
     background: linear-gradient(90deg, #e15b4c, #58a8ce); /* Darker gradient on hover */
 }
-/* Mobile Styles */
+
+/* Mobile Styles for Lesson Cards (and Tablet adjustments within this media query) */
+@media screen and (max-width: 768px) { /* Styles for screens up to tablet size (768px) */
+    .lessons-container {
+        padding: 20px 10px; /* Adjust container padding on tablet and mobile */
+        display: grid; /* Enable Grid Layout for Lessons Container on Tablet and Mobile */
+        grid-template-columns: repeat(2, 1fr); /* **Tablet Layout:** 2 Columns on Tablet */
+        gap: 20px; /* Adjust gap for tablet and mobile grid */
+    }
+    .lesson-card {
+        flex-direction: column; /* Ensure still stacked vertically on tablet and mobile cards in grid */
+        margin-bottom: 0; /* Remove bottom margin for cards in tablet and mobile grid */
+    }
+    .lesson-card .lesson-info {
+        padding: 15px; /* Adjust lesson info padding on tablet and mobile */
+    }
+    .lesson-card .lesson-info .lesson-title {
+        font-size: 1.3em; /* Smaller lesson title on mobile/tablet */
+    }
+    .lesson-card .lesson-info .lesson-actions {
+        flex-direction: row; /* Display buttons horizontally on tablet and mobile */
+        justify-content: center; /* Center buttons horizontally in tablet and mobile card */
+        flex-wrap: wrap; /* Allow buttons to wrap if needed */
+        gap: 10px; /* Adjust button gap on tablet and mobile */
+    }
+    .btn {
+        font-size: 0.9em; /* Slightly smaller button font on mobile/tablet */
+        padding: 8px 12px; /* Slightly smaller button padding on mobile/tablet */
+    }
+}
+
+/* Phone Styles (Overrides for smaller screens - Applied *within* mobile media query) */
+@media screen and (max-width: 576px) { /* **NEW:** Styles for phone screens (smaller than 576px) */
+    .lessons-container {
+        grid-template-columns: 1fr; /* **Phone Layout:** 1 Column on Phone - Overrides 2-column tablet layout */
+    }
+    .lesson-card .lesson-info .lesson-actions {
+        flex-direction: column; /* **Phone Layout:** Stack buttons vertically on phone - override horizontal tablet buttons */
+    }
+}
+
+
+/* Desktop Styles (Overrides for larger screens) */
+@media screen and (min-width: 769px) { /* Styles for desktop and larger screens */
+
+    .lessons-container {
+        display: grid; /* **CHANGED:** Use Grid Layout for Desktop */
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* **NEW:** Responsive Columns - Adjust minmax as needed */
+        gap: 30px; /* Spacing between grid items */
+        padding: 30px 25px; /* Adjust padding for desktop container */
+    }
+
+    .lesson-card {
+        margin-bottom: 0; /* **CHANGED:** Remove bottom margin on desktop cards - grid handles spacing */
+        flex-direction: column; /* **Ensured:** Stack video and info vertically within each grid item */
+    }
+
+    .lesson-card .video-container {
+        max-width: 100%; /* Ensure video container takes full width within grid item */
+    }
+
+.lesson-card .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Lesson Information Section */
+.lesson-card .lesson-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between lesson title and actions */
+    text-align: center; /* Center text content in lesson info */
+}
+
+.lesson-card .lesson-info .lesson-title {
+    font-size: 1.8em;
+    margin: 0;
+    color: #333;
+}
+
+/* Lesson Actions (Buttons) Container */
+.lesson-card .lesson-info .lesson-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    gap: 15px; /* Spacing between buttons */
+    align-items: center; /* Center buttons horizontally */
+}
+
+
+/* Button Styles (General and Specific Button Styles - Mostly No Changes, Adjusted for Card Context) */
+.btn { /* General Button Styles (No Changes) */
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+.btn:hover { /* General Button Hover Styles (No Changes) */
+    background-color: #0056b3;
+}
+/* Download Video Button */
+.download-btn {
+    background-color: #6ec0e5;
+}
+.download-btn:hover {
+    background-color: #58a8ce;
+}
+/* Download PDF Button */
+.pdf-btn {
+    background-color: #fd6f61;
+}
+.pdf-btn:hover {
+    background-color: #e85d52;
+}
+/* Start Quiz Button */
+.quiz-btn {
+    background: linear-gradient(90deg, #fd6f61, #6ec0e5); /* Gradient color */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+.quiz-btn:hover {
+    background: linear-gradient(90deg, #e15b4c, #58a8ce); /* Darker gradient on hover */
+}
+/* Mobile Styles for Lesson Cards */
 @media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .lessons-container {
+        padding: 20px 10px; /* Adjust container padding on mobile */
     }
-    .video-info {
-        align-items: center;
+    .lesson-card {
+        flex-direction: column; /* Ensure still stacked vertically on mobile */
     }
-    .video-info h2 {
-        font-size: 1.25rem;
+    .lesson-card .lesson-info {
+        padding: 20px; /* Adjust lesson info padding on mobile */
     }
+    .lesson-card .lesson-info .lesson-title {
+        font-size: 1.25rem; /* Smaller lesson title on mobile */
+    }
+    .lesson-card .lesson-info .lesson-actions {
+        flex-direction: column; /* Stack buttons vertically on mobile */
+    }
+    .btn {
+        font-size: 0.95rem; /* Slightly smaller button font on mobile */
+        padding: 10px 15px; /* Slightly smaller button padding on mobile */
+    }
+}
 }
